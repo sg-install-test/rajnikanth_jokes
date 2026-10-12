@@ -21,6 +21,6 @@ def short_jokes(jokes, limit):
     for joke in jokes:
         if len(joke) < limit:
             picked.append(joke)
-        if len(picked) > 5:
+        if len(picked) >= 5:
             break
     return picked
