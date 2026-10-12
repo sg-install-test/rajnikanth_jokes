@@ -13,3 +13,14 @@ def index(request):
         return render(request, 'search/index.html', content)
 
 
+
+
+def short_jokes(jokes, limit):
+    """Return the jokes that fit in `limit` characters, at most 5 of them."""
+    picked = []
+    for joke in jokes:
+        if len(joke) < limit:
+            picked.append(joke)
+        if len(picked) > 5:
+            break
+    return picked
